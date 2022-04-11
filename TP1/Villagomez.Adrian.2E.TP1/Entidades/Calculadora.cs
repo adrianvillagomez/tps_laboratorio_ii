@@ -2,7 +2,8 @@
 
 namespace Entidades
 {
-    public class Class1
+    static class Calculadora
     {
+
     }
 }
