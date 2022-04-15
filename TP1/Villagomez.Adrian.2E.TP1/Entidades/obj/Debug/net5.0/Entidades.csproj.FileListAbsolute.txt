@@ -1,0 +1,12 @@
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\bin\Debug\net5.0\Entidades.deps.json
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\bin\Debug\net5.0\Entidades.dll
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\bin\Debug\net5.0\Entidades.pdb
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.AssemblyReference.cache
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\Entidades.GeneratedMSBuildEditorConfig.editorconfig
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfoInputs.cache
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\Entidades.AssemblyInfo.cs
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\Entidades.csproj.CoreCompileInputs.cache
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\Entidades.dll
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\refint\Entidades.dll
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\Entidades.pdb
+F:\TP_Programacion_2021\TP1\Villagomez.Adrian.2E.TP1\Entidades\obj\Debug\net5.0\ref\Entidades.dll
