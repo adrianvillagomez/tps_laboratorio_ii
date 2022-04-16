@@ -26,7 +26,7 @@ namespace Entidades
         /// <param name="num1">Primer numero a operar</param>
         /// <param name="num2">Segundo numero a operar</param>
         /// <param name="operador">Operador para calcular</param>
-        /// <returns>Retorna el resultado de la operacion,de lo contrario retorna 0 o -1 si la divion es entre 0</returns>
+        /// <returns>Retorna el resultado de la operacion,de lo contrario retorna double.MaxValue</returns>
         public static double Operar(Operando num1,Operando num2,Char operador)
         {
             double resultadoOperaciones = double.MaxValue;          

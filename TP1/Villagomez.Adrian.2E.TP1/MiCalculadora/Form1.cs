@@ -17,7 +17,11 @@ namespace MiCalculadora
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Boton cerrar de mi formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             DialogResult respuesta = MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -26,7 +30,11 @@ namespace MiCalculadora
                 Dispose();
             }
         }
-
+        /// <summary>
+        /// Boton de convertir a binario de mi formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirABinario_Click(object sender, EventArgs e)
         {
             Operando aBinario = new Operando();
@@ -39,7 +47,11 @@ namespace MiCalculadora
             }
             btnConvertirABinario.Enabled = false;
         }
-
+        /// <summary>
+        /// boton convertir de Binario a decimal
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnConvertirADecimal_Click(object sender, EventArgs e)
         {
             string resultadoConversionaDecimal;
@@ -52,11 +64,20 @@ namespace MiCalculadora
                 btnConvertirABinario.Enabled = true;
             }
         }
-
+        /// <summary>
+        /// Boton de limpiar los textbox,combobox,ylabel
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }   
+        /// <summary>
+        /// Boton operar de mi formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
             double resultado = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text);
@@ -76,10 +97,15 @@ namespace MiCalculadora
             lista.Add(concatenaos);           
             lstOperaciones.DataSource = null;
             lstOperaciones.DataSource = lista;
-        }
-
+        }      
         private void FormCalculadora_Load(object sender, EventArgs e)
         {
+            this.cmbOperador.Items.Add("*");
+            this.cmbOperador.Items.Add("+");
+            this.cmbOperador.Items.Add("-");
+            this.cmbOperador.Items.Add("/");
+            this.cmbOperador.Items.Add("");
+            this.cmbOperador.SelectedIndex=4;
             Limpiar();
         }
         /// <summary>
@@ -89,7 +115,7 @@ namespace MiCalculadora
         {
             txtNumero1.Clear();
             txtNumero2.Clear();
-            cmbOperador.SelectedIndex = -1;
+            cmbOperador.SelectedIndex = 4;//-1
             lblResultado.Text = " ";
             btnConvertirABinario.Enabled = true;
         }
@@ -99,7 +125,7 @@ namespace MiCalculadora
         /// <param name="numero1"></param>
         /// <param name="numero2"></param>
         /// <param name="operador"></param>
-        /// <returns>El resultado de la operacion entre 2 numeros.</returns>
+        /// <returns>El resultado de la operacion entre 2 numeros.de lo contrario devuelve double.MaxValue </returns>
         private static double Operar(string numero1,string numero2,string operador)
         {
             double resultadoOperar;
@@ -117,7 +143,11 @@ namespace MiCalculadora
             }
             return resultadoOperar;
         }
-
+        /// <summary>
+        /// Boton del formulario (x) para cerrar la aplicacion
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult respuesta = MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

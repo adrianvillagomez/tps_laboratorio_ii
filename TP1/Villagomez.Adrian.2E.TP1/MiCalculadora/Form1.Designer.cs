@@ -44,11 +44,6 @@
             // 
             this.cmbOperador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbOperador.FormattingEnabled = true;
-            this.cmbOperador.Items.AddRange(new object[] {
-            "-",
-            "+",
-            "*",
-            "/"});
             this.cmbOperador.Location = new System.Drawing.Point(163, 78);
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(67, 23);
@@ -126,7 +121,7 @@
             this.lstOperaciones.ItemHeight = 17;
             this.lstOperaciones.Location = new System.Drawing.Point(414, 25);
             this.lstOperaciones.Name = "lstOperaciones";
-            this.lstOperaciones.Size = new System.Drawing.Size(132, 157);
+            this.lstOperaciones.Size = new System.Drawing.Size(132, 191);
             this.lstOperaciones.TabIndex = 9;
             // 
             // txtNumero1
