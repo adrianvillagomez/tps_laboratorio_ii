@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiCalculadora", "MiCalculadora\MiCalculadora.csproj", "{6F3CD549-B463-45FA-B586-336D5EB77A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "Vista\Vista.csproj", "{EBAAD13F-9FA9-4AC9-98DC-7718EAB05713}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{6F3CD549-B463-45FA-B586-336D5EB77A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F3CD549-B463-45FA-B586-336D5EB77A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F3CD549-B463-45FA-B586-336D5EB77A3C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBAAD13F-9FA9-4AC9-98DC-7718EAB05713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBAAD13F-9FA9-4AC9-98DC-7718EAB05713}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBAAD13F-9FA9-4AC9-98DC-7718EAB05713}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBAAD13F-9FA9-4AC9-98DC-7718EAB05713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

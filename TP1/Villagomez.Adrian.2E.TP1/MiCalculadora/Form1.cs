@@ -23,7 +23,7 @@ namespace MiCalculadora
             DialogResult respuesta = MessageBox.Show("¿Seguro de querer salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta == DialogResult.Yes)
             {
-                this.Close();
+                Dispose();
             }
         }
 
@@ -56,12 +56,22 @@ namespace MiCalculadora
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
-        }
-
+        }   
         private void btnOperar_Click(object sender, EventArgs e)
         {
-            double resultado = Operar(txtNumero1.Text,txtNumero2.Text,cmbOperador.Text);
-            lblResultado.Text = resultado.ToString();
+            double resultado = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text);
+            if (resultado == double.MinValue)
+            {
+                lblResultado.Text = "No se puede dividir entre 0 ";
+            } else if (resultado == double.MaxValue)
+            {
+                lblResultado.Text = "Error,valor incorrecto ";
+            }
+            else
+            {
+                lblResultado.Text = resultado.ToString();
+            }
+            btnConvertirABinario.Enabled = true;
             string concatenaos = $"{txtNumero1.Text} {cmbOperador.Text} {txtNumero2.Text} = {lblResultado.Text}";
             lista.Add(concatenaos);           
             lstOperaciones.DataSource = null;
@@ -72,6 +82,9 @@ namespace MiCalculadora
         {
             Limpiar();
         }
+        /// <summary>
+        /// Limpia la aplicación de datos antiguos
+        /// </summary>
         private void Limpiar()
         {
             txtNumero1.Clear();
@@ -80,13 +93,29 @@ namespace MiCalculadora
             lblResultado.Text = " ";
             btnConvertirABinario.Enabled = true;
         }
+        /// <summary>
+        /// Recibe dos números válidos y un operador en formato de cadena para operar entre ellos
+        /// </summary>
+        /// <param name="numero1"></param>
+        /// <param name="numero2"></param>
+        /// <param name="operador"></param>
+        /// <returns>El resultado de la operacion entre 2 numeros.</returns>
         private static double Operar(string numero1,string numero2,string operador)
         {
-            Operando operandoUno = new Operando(numero1);
-            Operando operandoDos = new Operando(numero2);
+            double resultadoOperar;
+            bool resultadoUno = double.TryParse(numero1,out double val1);
+            bool resultadoDos = double.TryParse(numero2,out double val2);
             char.TryParse(operador, out char operadorChar);
-            double resultado =Calculadora.Operar(operandoUno,operandoDos,operadorChar);
-            return resultado;
+            if (resultadoUno && resultadoDos)
+            {
+                Operando operandoUno = new Operando(val1);
+                Operando operandoDos = new Operando(val2);
+                resultadoOperar = Calculadora.Operar(operandoUno, operandoDos, operadorChar);
+            }else
+            {
+                resultadoOperar = double.MaxValue;
+            }
+            return resultadoOperar;
         }
 
         private void FormCalculadora_FormClosing(object sender, FormClosingEventArgs e)
