@@ -116,7 +116,7 @@
             // 
             // lstOperaciones
             // 
-            this.lstOperaciones.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lstOperaciones.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lstOperaciones.FormattingEnabled = true;
             this.lstOperaciones.ItemHeight = 17;
             this.lstOperaciones.Location = new System.Drawing.Point(414, 25);

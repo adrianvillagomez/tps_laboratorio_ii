@@ -18,7 +18,7 @@ namespace MiCalculadora
             InitializeComponent();
         }
         /// <summary>
-        /// Boton cerrar de mi formulario
+        /// Boton cerrar la aplicacion
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -31,7 +31,7 @@ namespace MiCalculadora
             }
         }
         /// <summary>
-        /// Boton de convertir a binario de mi formulario
+        /// Boton de convertir de Decimal a Binario
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -48,7 +48,7 @@ namespace MiCalculadora
             btnConvertirABinario.Enabled = false;
         }
         /// <summary>
-        /// boton convertir de Binario a decimal
+        /// Boton de convertir de Binario a Decimal
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -86,7 +86,7 @@ namespace MiCalculadora
                 lblResultado.Text = "No se puede dividir entre 0 ";
             } else if (resultado == double.MaxValue)
             {
-                lblResultado.Text = "Error,valor incorrecto ";
+                lblResultado.Text = "Error,dato incorrecto ";
             }
             else
             {
