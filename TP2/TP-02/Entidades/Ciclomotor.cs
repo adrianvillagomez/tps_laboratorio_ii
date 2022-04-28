@@ -8,6 +8,12 @@ namespace Entidades
 {
     public class Ciclomotor : Vehiculo
     {
+        /// <summary>
+        /// Constructor de CiClomotor
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="chasis"></param>
+        /// <param name="color"></param>
         public Ciclomotor(EMarca marca, string chasis, ConsoleColor color):base(chasis,marca,color)
         {
         }
@@ -22,12 +28,16 @@ namespace Entidades
                 return ETamanio.Chico;
             }
         }       
-        public override  string Mostrar()    //Amodificar
+        /// <summary>
+        /// Muestra los datos de Ciclomotor
+        /// </summary>
+        /// <returns></returns>
+        public override  string Mostrar() 
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("CICLOMOTOR");
-            //sb.AppendLine(this.Mostrar());
+            sb.AppendLine(base.Mostrar());
             sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("");
             sb.AppendLine("---------------------");

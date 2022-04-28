@@ -13,17 +13,23 @@ namespace Entidades
     {
         private List<Vehiculo> vehiculos;
         private int espacioDisponible;
+        /// <summary>
+        /// Enumerado de posible tipos de vehiculos
+        /// </summary>
         public enum ETipo
         {
-            Moto, Automovil, Camioneta, Todos
+            Ciclomotor,Sedan,SUV,Todos
         }
 
         #region "Constructores"
+        /// <summary>
+        /// constuctor privado que iniciara la lista
+        /// </summary>
         private Taller()
         {
             this.vehiculos = new List<Vehiculo>();
         }
-        public Taller(int espacioDisponible):this()   // A moifiar!!!
+        public Taller(int espacioDisponible):this() 
         {
             this.espacioDisponible = espacioDisponible;
         }
@@ -59,14 +65,23 @@ namespace Entidades
             {
                 switch (tipo)
                 {
-                    case ETipo.Camioneta:
-                        sb.AppendLine(v.Mostrar());
+                    case ETipo.Ciclomotor:
+                        if(v is Ciclomotor)
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
                         break;
-                    case ETipo.Moto:
-                        sb.AppendLine(v.Mostrar());
+                    case ETipo.Sedan:
+                        if(v is Sedan)
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
                         break;
-                    case ETipo.Automovil:
-                        sb.AppendLine(v.Mostrar());
+                    case ETipo.SUV:
+                        if (v is Suv)
+                        {
+                            sb.AppendLine(v.Mostrar());
+                        }
                         break;
                     default:
                         sb.AppendLine(v.Mostrar());
@@ -87,15 +102,17 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-            foreach (Vehiculo v in taller.vehiculos)
+            if (taller.vehiculos.Count < taller.espacioDisponible)
             {
-                if (v == vehiculo)
-                { 
-                    return taller;
+                foreach (Vehiculo v in taller.vehiculos)
+                {
+                    if (v == vehiculo)
+                    {
+                        return taller;
+                    }
                 }
+                taller.vehiculos.Add(vehiculo);
             }
-
-            taller.vehiculos.Add(vehiculo);
             return taller;
         }
         /// <summary>
@@ -104,16 +121,17 @@ namespace Entidades
         /// <param name="taller">Objeto donde se quitará el elemento</param>
         /// <param name="vehiculo">Objeto a quitar</param>
         /// <returns></returns>
-        public static Taller operator -(Taller taller, Vehiculo vehiculo)      //Amodificar!!
+        public static Taller operator -(Taller taller, Vehiculo vehiculo) 
         {
             foreach (Vehiculo v in taller.vehiculos)
             {
                 if (v == vehiculo)
                 {
+                    taller.vehiculos.Remove(vehiculo);
                     break;
                 }
             }
-            taller.vehiculos.Remove(vehiculo);
+            //taller.vehiculos.Remove(vehiculo);
             return taller;
         }
         #endregion

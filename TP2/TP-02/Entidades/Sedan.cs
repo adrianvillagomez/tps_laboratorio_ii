@@ -38,13 +38,16 @@ namespace Entidades
                 return ETamanio.Mediano;
             }
         }
-
+        /// <summary>
+        /// Obtiene todos los datos de Sedan
+        /// </summary>
+        /// <returns>Retorna los datos en string</returns>
         public override  string Mostrar()
         {
-            StringBuilder sb = new StringBuilder();//A MODIFCIAR
+            StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("SEDAN");
-            sb.AppendLine(this.ToString());
+            sb.AppendLine(base.Mostrar());
             sb.AppendFormat("TAMAÑO : {0}", this.Tamanio);
             sb.AppendLine("TIPO : " + this.tipo);
             sb.AppendLine("");
